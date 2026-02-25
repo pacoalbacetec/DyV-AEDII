@@ -1,7 +1,8 @@
 #include <pair>
 
 class iterativo {
-    pair<int,int> ej5(vector<char>& a, int n, int m,  char c) const {
+    public:
+    static pair<int,int> ej5(vector<char>& a, int n, int m,  char c) const {
     
         int count = 0;
         int maxCount = count;
