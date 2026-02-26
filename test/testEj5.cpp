@@ -68,69 +68,69 @@ TEST_CASE("Tests ejercicio iterativo") {
     }
 }
 
-// TEST_CASE("Tests ejercicio DyV") {
+TEST_CASE("Tests ejercicio DyV") {
 
-//     SUBCASE("ejemplo dado") {
-//         pair<int,int> r = Dyv::ej5(v, v.size(), 5, 'c');
-//         CHECK(r.first == 6);
-//         CHECK(r.second == 3);
-//     }
+    SUBCASE("ejemplo dado") {
+        pair<int,int> r = Dyv(v.data(), v.size(), 5, 'c').ej5();
+        CHECK(r.first == 6);
+        CHECK(r.second == 3);
+    }
 
-//     SUBCASE("no hay letra buscada") {
-//         pair<int,int> r = Dyv::ej5(v, v.size(), 5, 'x');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 0);
-//     }
+    SUBCASE("no hay letra buscada") {
+        pair<int,int> r = Dyv(v.data(), v.size(), 5, 'x').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 0);
+    }
 
-//     SUBCASE("mejor ventana al inicio") {
-//         vector<char> va = {'c','c','c','a','b','d','d','a','d','d'};
-//         pair<int,int> r = Dyv::ej5(va, 10, 5, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 3);
-//     }
+    SUBCASE("mejor ventana al inicio") {
+        vector<char> va = {'c','c','c','a','b','d','d','a','d','d'};
+        pair<int,int> r = Dyv(va.data(), 10, 5, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 3);
+    }
 
-//     SUBCASE("m igual a n, ventana unica") {
-//         vector<char> vb = {'c','d','c','d','c'};
-//         pair<int,int> r = Dyv::ej5(vb, 5, 5, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 3);
-//     }
+    SUBCASE("m igual a n, ventana unica") {
+        vector<char> vb = {'c','d','c','d','c'};
+        pair<int,int> r = Dyv(vb.data(), 5, 5, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 3);
+    }
 
-//     SUBCASE("m igual a 1") {
-//         vector<char> vc = {'a','c','a','a','c'};
-//         pair<int,int> r = Dyv::ej5(vc, 5, 1, 'c');
-//         CHECK(r.first == 2);
-//         CHECK(r.second == 1);
-//     }
+    SUBCASE("m igual a 1") {
+        vector<char> vc = {'a','c','a','a','c'};
+        pair<int,int> r = Dyv(vc.data(), 5, 1, 'c').ej5();
+        CHECK(r.first == 2);
+        CHECK(r.second == 1);
+    }
 
-//     SUBCASE("n=1 m=1 con match") {
-//         vector<char> vd = {'c'};
-//         pair<int,int> r = Dyv::ej5(vd, 1, 1, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 1);
-//     }
+    SUBCASE("n=1 m=1 con match") {
+        vector<char> vd = {'c'};
+        pair<int,int> r = Dyv(vd.data(), 1, 1, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 1);
+    }
 
-//     SUBCASE("n=1 m=1 sin match") {
-//         vector<char> ve = {'a'};
-//         pair<int,int> r = Dyv::ej5(ve, 1, 1, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 0);
-//     }
+    SUBCASE("n=1 m=1 sin match") {
+        vector<char> ve = {'a'};
+        pair<int,int> r = Dyv(ve.data(), 1, 1, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 0);
+    }
 
-//     SUBCASE("todos los caracteres son c") {
-//         vector<char> vf = {'c','c','c','c','c'};
-//         pair<int,int> r = Dyv::ej5(vf, 5, 3, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 3);
-//     }
+    SUBCASE("todos los caracteres son c") {
+        vector<char> vf = {'c','c','c','c','c'};
+        pair<int,int> r = Dyv(vf.data(), 5, 3, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 3);
+    }
 
-//     SUBCASE("empate gana la primera ventana") {
-//         vector<char> vg = {'c','a','a','a','c'};
-//         pair<int,int> r = Dyv::ej5(vg, 5, 3, 'c');
-//         CHECK(r.first == 1);
-//         CHECK(r.second == 1);
-//     }
-// }
+    SUBCASE("empate gana la primera ventana") {
+        vector<char> vg = {'c','a','a','a','c'};
+        pair<int,int> r = Dyv(vg.data(), 5, 3, 'c').ej5();
+        CHECK(r.first == 1);
+        CHECK(r.second == 1);
+    }
+}
 
 // TEST_CASE("Consistencia Iterativo == DyV") {
 
