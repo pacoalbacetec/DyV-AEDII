@@ -76,6 +76,12 @@ TEST_CASE("Tests ejercicio DyV") {
         CHECK(r.second == 3);
     }
 
+    SUBCASE("n=6 m=5 caso cruzado fuera de limites") {
+    vector<char> vh = {'c','c','a','a','c','c'};
+    pair<int,int> r = Dyv(vh.data(), 6, 5, 'c').ej5();
+    CHECK(r.second == 3);
+    }
+
     SUBCASE("no hay letra buscada") {
         pair<int,int> r = Dyv(v.data(), v.size(), 5, 'x').ej5();
         CHECK(r.first == 1);
@@ -138,6 +144,12 @@ TEST_CASE("Consistencia Iterativo == DyV") {
         pair<int,int> ri = Iterativo::ej5(v, v.size(), 5, 'c');
         pair<int,int> rd = Dyv(v.data(), v.size(), 5, 'c').ej5();
         CHECK(ri.second == rd.second);
+    }
+
+    SUBCASE("n=6 m=5 caso cruzado fuera de limites") {
+    vector<char> vh = {'c','c','a','a','c','c'};
+    pair<int,int> r = Dyv(vh.data(), 6, 5, 'c').ej5();
+    CHECK(r.second == 3);
     }
 
     SUBCASE("no hay letra buscada") {

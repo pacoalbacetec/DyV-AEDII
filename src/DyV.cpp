@@ -41,7 +41,7 @@ pair<int, int> Dyv::rec(int izq, int dch){
     int count = contar(start, start + m - 1);
     int pos = start;
 
-    for(int i = start + 1; i <= mid; ++i){
+    for(int i = start + 1; i <= min(mid, dch - m + 1); ++i){
         if(a[i-1] == c) --count;
         if(a[i+m-1] == c) ++count;
         if(count > maxCount){
