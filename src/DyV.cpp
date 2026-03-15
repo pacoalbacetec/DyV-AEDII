@@ -23,6 +23,8 @@ pair<int, int> Dyv::rec(int izq, int dch){
             maxCount = leftRes.second;
             bestPos = leftRes.first;
         }
+        if(maxCount == m) return {bestPos, maxCount};
+
     }
 
     if(dch-mid >= m){
@@ -31,6 +33,8 @@ pair<int, int> Dyv::rec(int izq, int dch){
             maxCount = rightRes.second;
             bestPos = rightRes.first;
         }
+        if(maxCount == m) return {bestPos, maxCount};
+
     }
 
     int start = max(izq, mid - m + 2);
